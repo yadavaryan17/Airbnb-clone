@@ -5,15 +5,15 @@
             <h3><%=listing.title%></h3>
         </div>
         <div class="card col-6 offset-3 listing-card">
-        <img src="<%= listing.image %>" class="card-img-top" alt="listing image">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image">
         <div class="card-body">
        
-           <br>
-           <p class="card-text">owen by <i><%= listing.owner.username %></i></p>
-           <p class="card-text"><%= listing.description %> </p>
-           <p class="card-text"> &#8377;<%= listing.price.toLocaleString("en-in") %> </p>
-           <p class="card-text"><%= listing.location %> </p>
-           <p class="card-text"><%= listing.country %> </p>
+           
+           <span class="show-txt"><b>Owner is </b><i> <%= listing.owner.username %></i></span>
+           <span class="show-txt"><%= listing.description %> </span>
+           <span> &#8377;<%= listing.price.toLocaleString("en-in") %> </span><br>
+           <span><%= listing.location %> </span>
+           <span><%= listing.country %> </span>
            
       
     </div>

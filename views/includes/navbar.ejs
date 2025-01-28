@@ -1,3 +1,19 @@
+<style>
+.search-btn{
+  background-color:  rgb(236, 26, 26);
+  color: aliceblue;
+  border: none;
+  border-radius: 21px;
+}
+.search-bar{
+  border-radius: 24px;
+}
+.search-btn:hover{
+  background-color:  rgb(236, 26, 26);
+}
+</style>
+
+
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
@@ -7,10 +23,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link "  href="/">Home</a>
-          <a class="nav-link" href="/listings">All Listings</a>
-          <a class="nav-link" href="/listings/new">New Listings</a>
+          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link ms" href="/listings/new">Create new</a>
         </div>
+
+        <form class="d-flex m-auto" role="search" >
+          <input class="form-control me-2 search-bar" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+        </form>
+
         <div class="navbar-nav ms-auto">
           <% if(!currUser){ %>
           <a class="nav-link "  href="/signup">sign up</a>

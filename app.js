@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const Listing = require("./models/listing.js");
 
 const express = require('express');
 const app = express();
@@ -18,8 +19,8 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-// const MONGO_URL = process.env.ATLASDB_URL;
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.ATLASDB_URL;
 
 main()
 .then(() => {
@@ -52,9 +53,7 @@ const sessionOptions = {
     },
 };
 
-app.get("/", (req, res) => {
-    res.send("hellow word");
-});
+
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -73,6 +72,10 @@ app.use((req, res , next)=> {
     next();
 });
 
+app.get("/",  async(req, res) => {
+    const allListings = await Listing.find({});
+    res.render("./listings/index.ejs", {allListings});
+});
 // app.get("/demouser", async(req, res)=> {
 //     let fakeUser = new User({
 //         email: "student@gmail.com",

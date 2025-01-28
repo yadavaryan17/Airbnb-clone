@@ -14,6 +14,7 @@ module.exports.creatReview =  async (req, res)=>{
 
     res.redirect(`/listings/${listing._id}`)
 }
+
 module.exports.deleteReview = async (req, res) => {
     let { id, reviewId } = req.params;
 

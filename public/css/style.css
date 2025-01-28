@@ -59,7 +59,7 @@ body {
    border-radius: 1rem !important;
    width: 100% !important;
    object-fit: cover !important;
-   height: 400px !important;
+   height: 300px !important;
  }
  .card-body{
    padding: 0 !important;
@@ -69,6 +69,7 @@ body {
  }
 .listing-link{
    text-decoration: none;
+   margin-top: 12px !important;
 }
 .card-img-overlay{
    opacity: 0;
@@ -86,6 +87,15 @@ body {
    display: flex;
 }
 .listing-img{
-   width: 26rem !important;
-   height: 20rem !important;
+   height: 17rem !important;
+}
+.edit-img{
+   width: 18rem !important;
+   height: 12rem !important;
+   object-fit: cover !important;
+}
+.show-txt{
+   display: block;
+   margin-bottom: 3px !important;
+   
 }
