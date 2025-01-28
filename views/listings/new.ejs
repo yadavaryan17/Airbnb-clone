@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+
+<br>
+<div class="row for-new">
+ <div class="col-8 offset-2">
+    <h3>Create a new leasting</h3>
+    
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="Enter title" type="text" class="form-control" required>
+        <div class="invalid-feedback">Please enter title</div>
+    </div>
+
+         <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]"  class="form-control" required></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input name="listing[image]" placeholder="Enter image URL here" type="text" class="form-control">
+    </div>
+
+    <div class="row">
+    <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input name="listing[price]" placeholder="Enter your price"  class="form-control" required>
+        <div class="invalid-feedback">Please enter your Price</div>
+    </div>
+
+    <div class="mb-3 col-md-8">
+        <label for="country" class="form-label">Country</label>
+        <input name="listing[country]" placeholder="Enter your country" type="text" class="form-control" required>
+        <div class="invalid-feedback">Please enter your Country</div>
+    </div>
+</div>
+
+    <div class="mb-3">   
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]"  placeholder="Enter your location" type="text" class="form-control" required>
+        <div class="invalid-feedback">Please enter your location</div>
+    </div> 
+       <br>
+        <button class="btn btn-success">Add</button>
+</form>
+</div>
+</div>
+<br>
+
+</body>
