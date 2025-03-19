@@ -6,15 +6,20 @@ const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js")
 const userController = require("../controllers/users.js");
 
+//signup rout
 router.get("/signup", (req, res)=> {
     res.render("../views/users/signup.ejs")
 });
 
+//signup Create rout
 router.post("/signup",wrapAsync( userController.signup)
 );
+
+//Login
 router.get("/login", (req, res)=> {
     res.render("../views/users/login.ejs")
 });
+
 
 router.post("/login", saveRedirectUrl,
     passport.authenticate("local", {
